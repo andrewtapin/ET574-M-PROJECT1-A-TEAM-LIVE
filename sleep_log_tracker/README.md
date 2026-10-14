@@ -15,7 +15,8 @@ cd sleep_log_tracker
 python main.py
 ```
 
-In Codespaces, python3 main.py also works.
+In Codespaces, first run cd sleep_log_tracker from the repository root,
+then run python3 main.py from that folder.
 Python 3 is required. No third-party packages are needed.
 
 ## Menu and inputs
