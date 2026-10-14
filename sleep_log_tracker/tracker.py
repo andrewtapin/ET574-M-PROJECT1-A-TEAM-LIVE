@@ -88,7 +88,21 @@ def add_entry():
 
 
 def view_all():
-    print("View All Entries is awaiting implementation.")
+    """Display sessions using matching indexes in the four lists."""
+    if len(data.dates) == 0:
+        print("No sleep entries recorded.")
+        return
+
+    for index in range(len(data.dates)):
+        print(f"\nEntry {index + 1}")
+        print(f"Date: {data.dates[index]}")
+        print(f"Hours slept: {data.hours_slept[index]:.2f}")
+        print(f"Sleep quality: {data.sleep_qualities[index]}/5")
+
+        if data.notes[index] == "":
+            print("Notes: None")
+        else:
+            print(f"Notes: {data.notes[index]}")
 
 
 def view_summary():
