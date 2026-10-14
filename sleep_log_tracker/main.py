@@ -10,7 +10,7 @@ def main():
         print("2. View Summary")
         print("3. View All Entries")
         print("4. Exit")
-        choice = input("Choose an option: ")
+        choice = input("Choose an option: ").strip()
         if choice == "1":
             add_entry()
         elif choice == "2":
@@ -20,6 +20,8 @@ def main():
         elif choice == "4":
             print("Goodbye!")
             break
+        else:
+            print("Invalid choice. Please enter 1, 2, 3, or 4.")
 
 
 if __name__ == "__main__":
