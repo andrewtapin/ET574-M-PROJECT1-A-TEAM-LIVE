@@ -106,4 +106,20 @@ def view_all():
 
 
 def view_summary():
-    print("View Summary is awaiting implementation.")
+    """Calculate and display sleep statistics."""
+    total_entries = len(data.dates)
+
+    if total_entries == 0:
+        print("No sleep entries recorded.")
+        return
+
+    total_hours = sum(data.hours_slept)
+    average_hours = total_hours / total_entries
+    best_quality = max(data.sleep_qualities)
+    worst_quality = min(data.sleep_qualities)
+
+    print(f"Total entries: {total_entries}")
+    print(f"Total hours: {total_hours:.2f}")
+    print(f"Average hours: {average_hours:.2f}")
+    print(f"Best sleep quality: {best_quality}/5")
+    print(f"Worst sleep quality: {worst_quality}/5")
