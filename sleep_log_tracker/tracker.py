@@ -88,8 +88,44 @@ def add_entry():
 
 
 def view_all():
-    print("View All Entries is awaiting implementation.")
+    """Display sessions using matching indexes in the four lists."""
+    if not data.lists_are_synchronized():
+        print("Error: inconsistent sleep data. Please restart the program.")
+        return
+    if len(data.dates) == 0:
+        print("No sleep entries recorded.")
+        return
+
+    for index in range(len(data.dates)):
+        print(f"\nEntry {index + 1}")
+        print(f"Date: {data.dates[index]}")
+        print(f"Hours slept: {data.hours_slept[index]:.2f}")
+        print(f"Sleep quality: {data.sleep_qualities[index]}/5")
+
+        if data.notes[index] == "":
+            print("Notes: None")
+        else:
+            print(f"Notes: {data.notes[index]}")
 
 
 def view_summary():
-    print("View Summary is awaiting implementation.")
+    """Calculate and display sleep statistics."""
+    if not data.lists_are_synchronized():
+        print("Error: inconsistent sleep data. Please restart the program.")
+        return
+    total_entries = len(data.dates)
+
+    if total_entries == 0:
+        print("No sleep entries recorded.")
+        return
+
+    total_hours = sum(data.hours_slept)
+    average_hours = total_hours / total_entries
+    best_quality = max(data.sleep_qualities)
+    worst_quality = min(data.sleep_qualities)
+
+    print(f"Total entries: {total_entries}")
+    print(f"Total hours: {total_hours:.2f}")
+    print(f"Average hours: {average_hours:.2f}")
+    print(f"Best sleep quality: {best_quality}/5")
+    print(f"Worst sleep quality: {worst_quality}/5")
