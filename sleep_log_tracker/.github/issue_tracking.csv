@@ -1,0 +1,8 @@
+ID,TYPE,COMMIT #,STATUS,DESCRIPTION,REPORTER,ASSIGNEE,DUE,CREATED,RESOLVED,NOTES
+1,task,,open,Create project structure and starter files,,Andrew Kirk,,2026-10-13,,Setup in progress.
+2,task,,open,Maintain parallel lists and shared helper,,Qingyun Li,,2026-10-13,,All roles review storage.
+3,task,,open,Implement menu and program flow,,Andrew Kirk,,2026-10-13,,Qingyun and Peter review.
+4,task,,open,Implement validated entry collection,,Qingyun Li,,2026-10-13,,Andrew and Peter review.
+5,task,,open,Implement entry display and summary,,Peter Oh,,2026-10-13,,Andrew and Qingyun review.
+6,task,,open,Test complete application,,Andrew Kirk,,2026-10-13,,All roles test and record results.
+7,task,,open,Complete README and contributions,,Peter Oh,,2026-10-13,,Andrew and Qingyun review.
