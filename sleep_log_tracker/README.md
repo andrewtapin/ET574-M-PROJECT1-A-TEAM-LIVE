@@ -2,7 +2,7 @@
 
 ET574 section M, Project 1.
 
-Starter menu and placeholder tracker functions. Four parallel lists store sessions.
+The repeating menu is implemented with input validation, clean EOF exit and one-time guidance. Entry and report functions remain placeholders. Four parallel lists store sessions.
 Open sleep_log_tracker/main.py and choose Run Python File in Terminal.
 Python 3 is required. No third-party packages are needed.
 
