@@ -40,7 +40,43 @@ def valid_date(date):
     return 1 <= day <= month_lengths[month - 1]
 
 def add_entry():
-    print("Add Sleep Entry is awaiting implementation.")
+    """Validate every field before appending a complete session."""
+    if not data.lists_are_synchronized():
+        print("Error: inconsistent sleep data. Please restart the program.")
+        return
+
+    while True:
+        date = input("Date (YYYY-MM-DD): ").strip()
+        if valid_date(date):
+            break
+        print("Invalid date. Enter a real date in YYYY-MM-DD format.")
+
+    while True:
+        try:
+            hours = float(input("Hours slept (0–24): ").strip())
+        except ValueError:
+            print("Invalid hours. Enter a number from 0 through 24.")
+            continue
+        if 0 <= hours <= 24:
+            break
+        print("Invalid hours. Enter a number from 0 through 24.")
+
+    while True:
+        try:
+            quality = int(input("Sleep quality (1–5): ").strip())
+        except ValueError:
+            print("Invalid quality. Enter a whole number from 1 through 5.")
+            continue
+        if 1 <= quality <= 5:
+            break
+        print("Invalid quality. Enter a whole number from 1 through 5.")
+
+    entry_notes = input("Notes (optional): ").strip()
+    data.dates.append(date)
+    data.hours_slept.append(hours)
+    data.sleep_qualities.append(quality)
+    data.notes.append(entry_notes)
+    print("Entry added.")
 
 
 def view_all():
