@@ -89,6 +89,9 @@ def add_entry():
 
 def view_all():
     """Display sessions using matching indexes in the four lists."""
+    if not data.lists_are_synchronized():
+        print("Error: inconsistent sleep data. Please restart the program.")
+        return
     if len(data.dates) == 0:
         print("No sleep entries recorded.")
         return
@@ -107,6 +110,9 @@ def view_all():
 
 def view_summary():
     """Calculate and display sleep statistics."""
+    if not data.lists_are_synchronized():
+        print("Error: inconsistent sleep data. Please restart the program.")
+        return
     total_entries = len(data.dates)
 
     if total_entries == 0:
