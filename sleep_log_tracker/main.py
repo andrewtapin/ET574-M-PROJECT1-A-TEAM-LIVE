@@ -10,7 +10,11 @@ def main():
         print("2. View Summary")
         print("3. View All Entries")
         print("4. Exit")
-        choice = input("Choose an option: ").strip()
+        try:
+            choice = input("Choose an option: ").strip()
+        except EOFError:
+            print("\nGoodbye!")
+            break
         if choice == "1":
             add_entry()
         elif choice == "2":
